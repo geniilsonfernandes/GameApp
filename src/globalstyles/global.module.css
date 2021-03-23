@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #1A1E21;
+    font-family: 'Poppins', sans-serif;
+    
+}
+.pdfix{
+    padding: 0 5%;
+}
+
+.mwfix {
+    max-width: 1336px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1440px){
+	.mwfix {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 1088px){
+    .mwfix {
+        max-width: 746px;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 746px) {
+	.mwfix {
+        max-width: 610px;
+        margin: 0 auto;
+    }
+}

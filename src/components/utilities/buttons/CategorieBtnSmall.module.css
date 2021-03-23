@@ -1,0 +1,156 @@
+.CategorieBtnSmall {
+    
+    height: 52px;
+    min-width: 125px;
+    max-width: 270px;
+    border-radius: 8px;
+    background-size: auto 125%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    transition: all ease-in-out 200ms;
+}
+
+.CategorieBtnSmall a{
+    padding: 0 20px;
+    
+}
+.CategorieBtnSmall a:hover {
+    box-shadow: 0 0 4px #772CE8 ;
+}
+.CategorieBtnSmall img {
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%) scale(1.2);    
+    transition: all ease-in-out 200ms;
+}
+.CategorieBtnSmall::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    transition: all ease-in-out 200ms;    
+}
+
+.CategorieBtnSmall:focus img,
+.CategorieBtnSmall:hover img{
+    
+    left: 50%;
+    transform: translateX(-50%) scale(1.1);    
+    /* background-size:auto 120%; */
+}
+.CategorieBtnSmall:focus::after,
+.CategorieBtnSmall:hover::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.8;
+}
+.CategorieBtnSmall a {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+
+.Action4::after{
+    background: linear-gradient(90deg, #0040E6 6.3%, rgba(0, 64, 229, 0.5) 97.78%);
+}
+.Action4:focus::after,
+.Action4:hover::after{
+    background: linear-gradient(90deg, #0040E6 6.3%, rgba(0, 64, 229, 0.5) 97.78%);
+}
+
+.Indie51::after{
+    background: linear-gradient(90deg, #E60097 6.3%, rgba(229, 0, 151, 0.5) 97.78%);
+}
+.Indie51:focus::after,
+.Indie51:hover::after{
+    background: linear-gradient(90deg, #E60097 6.3%, rgba(229, 0, 151, 0.5) 97.78%);
+}
+
+.Adventure3::after{
+    background: linear-gradient(90deg, #C9C340 6.3%, rgba(201, 195, 64, 0.5) 97.78%);
+}
+.Adventure3:focus::after,
+.Adventure3:hover::after{
+    background: linear-gradient(90deg, #C9C340 6.3%, rgba(201, 195, 64, 0.5) 97.78%);
+}
+
+.Strategy10::after{
+    background: linear-gradient(90deg, #E65300 6.3%, rgba(229, 83, 0, 0.5) 97.78%);
+}
+.Strategy10:focus::after,
+.Strategy10:hover::after{
+    background: linear-gradient(90deg, #E65300 6.3%, rgba(229, 83, 0, 0.5) 97.78%);
+}
+
+.RPG5::after{
+    background: linear-gradient(90deg, #00D8E6 6.3%, rgba(0, 216, 229, 0.5) 97.78%);
+}
+.RPG5:focus::after,
+.RPG5:hover::after{
+    background: linear-gradient(90deg, #00D8E6 6.3%, rgba(0, 216, 229, 0.5) 97.78%);
+}
+
+.Shooter2::after{
+    background: linear-gradient(90deg, #E60000 6.3%, rgba(229, 0, 0, 0.5) 97.78%);
+}
+.Shooter2:focus::after,
+.Shooter2:hover::after{
+    background: linear-gradient(90deg, #E60000 6.3%, rgba(229, 0, 0, 0.5) 97.78%);
+}
+
+.Casual40::after{
+    background: linear-gradient(90deg, #E67C00 6.3%, rgba(229, 124, 0, 0.5) 97.78%);
+}
+.Casual40:focus::after,
+.Casual40:hover::after{
+    background: linear-gradient(90deg, #E67C00 6.3%, rgba(229, 124, 0, 0.5) 97.78%);
+}
+
+.Racing1::after{
+    background: linear-gradient(90deg, #0085E5 6.3%, rgba(0, 133, 229, 0.5) 97.78%);
+}
+.Racing1:focus::after,
+.Racing1:hover::after{
+    background: linear-gradient(90deg, #0085E5 6.3%, rgba(0, 133, 229, 0.5) 97.78%);
+}
+
+.Sports15::after{
+    background: linear-gradient(90deg, #00E65C 6.3%, rgba(0, 229, 92, 0.5) 97.78%);
+}
+.Sports15:focus::after,
+.Sports15:hover::after{
+    background: linear-gradient(90deg, #00E65C 6.3%, rgba(0, 229, 92, 0.5) 97.78%);
+}
+
+.Card17::after{
+    background: linear-gradient(90deg, #00D1FF 6.3%, rgba(0, 209, 255, 0.5) 97.78%);
+}
+.Card17:focus::after,
+.Card17:hover::after{
+    background: linear-gradient(90deg, #00D1FF 6.3%, rgba(0, 209, 255, 0.5) 97.78%);
+}

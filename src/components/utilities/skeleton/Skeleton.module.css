@@ -1,0 +1,16 @@
+.skeleton {
+    margin-bottom: 8px;
+    animation: skeleton 1.5s ease-in-out 0.1s infinite;
+}
+
+@keyframes skeleton {
+    0% {
+        background: #272e31;
+    }
+    50% {
+        background: #1e2325;
+    }
+    100% {
+        background: #272e31;
+    }
+}
