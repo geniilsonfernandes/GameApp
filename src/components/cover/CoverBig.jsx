@@ -19,14 +19,31 @@ import Skeleton from "../utilities/skeleton/Skeleton";
 import ThumbnailSlider from "./thumbnailSlider/ThumbnailSlider";
 import { Link } from "react-router-dom";
 
+//api
+const apiKey = "?key=2f93b9a7bffb481a9ab214dcdb9530f0";
+const fetchBasic = async (id) => {
+  const response = await fetch(`https://api.rawg.io/api/games/${id}${apiKey}`);
+  const dados = await response.json();
+  return dados;
+};
+// const fetchList = async (list) => {
+//   Promise.all(
+//     list.map((id) =>
+//       fetch(`https://api.rawg.io/api/games/${id}${apiKey}`)
+//         .then((response) => response.json())
+//     )).then((dados) => console.log(dados))
+// };
+
 //comp
 const CoverBig = () => {
   //hooks
-  const { games, loading, coverLoad } = useCover();
+  const { games, loading} = useCover();
   //states
   const [countGame, setCountGame] = useState(0);
   //games
-  const gamesHeader = [364806, 51325, 42187, 5563, 41494];
+ 
+
+  
 
   // index controle
   const nextClick = () => {
@@ -42,27 +59,72 @@ const CoverBig = () => {
       : setCountGame(countGame - 1);
   };
 
+ 
+
   //get dados
+  const [game, setGame] = useState({});
+
+  const [carregando, setCarregando] = useState(true);
+
+  // useEffect(() => {
+  //   const loadDate = async () => {
+  //     //get dados
+  //     let list = await fetchList([364806, 51325, 42187, 5563, 41494])
+  //     //
+  //     setGameList(list);
+  //     //
+  //   };
+  // //  loadDate();
+  // }, []);
+  console.log(carregando);
   useEffect(() => {
-    const init = () => {
-      if (gamesHeader.length !== games.length) {
-        coverLoad(gamesHeader);
-      }
+    const loadDate = async () => {
+      //get dados
+      let r = await fetchBasic(51325);
+      //
+      setGame(r);
+      console.log(r);
+      //
     };
-    init();
-    //coverInit();
+    loadDate();
   }, []);
-  // platform
+
+  useEffect(() => {
+    if (game!=={}) {
+      setCarregando(false)
+      console.log('tem dados');
+    }else{
+      console.log('n tem dados');
+    }
+  }, [game])
+
+
+  /*
+esse nao tem erro de eslint
+
+  useEffect(() => {
+    const loadDate = async () => {
+      //get dados
+      let r = await fetchBasic(51325)
+      //
+      setGame(r)
+      setCarregando(false)
+      //
+    };
+    loadDate();
+  }, []);
+  
+  */
 
   return (
     <div className={global.mwfix}>
       <div
         className={styles.cover__photo}
         style={
-          loading
+          true
             ? { background: "#1e2325" }
             : {
-                backgroundImage: `url(${games[countGame].background_image})`,
+                background:'red',
               }
         }
       >
@@ -73,18 +135,18 @@ const CoverBig = () => {
         <div className={styles.game__info}>
           <div className={styles.info__name}>
             <h1>
-              {loading ? (
+              {true ? (
                 <Skeleton width={300} height={36} />
               ) : (
-                games[countGame].name
+                'games[countGame].name'
               )}
             </h1>
           </div>
           <div className={styles.info__publisher}>
             {loading && <Skeleton width={100} height={21} />}
-            <p>{!loading && games[countGame].publishers[0].name}</p>
+            <p>''</p>
             <div className={styles.info__platforms}>
-              {loading ? (
+              {true ? (
                 <Skeleton width={30} height={16} />
               ) : (
                 games[countGame].parent_platforms.map((pltr, id) =>
@@ -97,7 +159,7 @@ const CoverBig = () => {
                   )
                 )
               )}
-              {loading ? (
+              {true ? (
                 <Skeleton width={30} height={16} />
               ) : (
                 games[countGame].parent_platforms.map((pltr, id) =>
@@ -110,7 +172,7 @@ const CoverBig = () => {
                   )
                 )
               )}
-              {loading ? (
+              {true ? (
                 <Skeleton width={30} height={16} />
               ) : (
                 games[countGame].parent_platforms.map((pltr, id) =>
@@ -127,10 +189,10 @@ const CoverBig = () => {
           </div>
           <div className={styles.divisor}> </div>
           <div className={styles.description}>
-            {loading && <Skeleton width={300} height={72} />}
+            {true && <Skeleton width={300} height={72} />}
             <p>
-              {!loading &&
-                games[countGame].description_raw.substring(0, 150) + "..."}
+              {/* {!loading &&
+                games[countGame].description_raw.substring(0, 150) + "..."} */}
             </p>
           </div>
           <div className={styles.info__buttons}>

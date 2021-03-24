@@ -3,7 +3,7 @@ import global from "../../styles/global.module.css";
 import categorie from "./Categorie.module.css";
 
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import CardGame from "../../components/utilities/cardGame/CardGame";
 
 const Categorie = () => {

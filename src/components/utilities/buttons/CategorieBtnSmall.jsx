@@ -7,7 +7,6 @@ const CategorieBtnSmall = (props) => {
   const { img } = props;
   const { id } = props;
   const { classStyles } = props;
-  console.log(classStyles);
   return (
     <>
       <div key={id} className={`${styles.CategorieBtnSmall} ${styles[`${classStyles}`]}`}>

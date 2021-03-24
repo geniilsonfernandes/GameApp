@@ -7,7 +7,7 @@ import { categoriesId } from "../../data/config.js";
 import CategorieBtnSmall from "../utilities/buttons/CategorieBtnSmall";
 //img
 import CategorieImg from "../../img/categoriaActionsSmal.png";
-import AdventureImg from "../../img/categoriaAdventureSmal.png";
+
 
 const CategoriesHome = () => {
 
@@ -24,6 +24,7 @@ const CategoriesHome = () => {
         <div className={styles.categories__containerGrid}>
           {categoriesId.map((item) => (
             <CategorieBtnSmall
+            key={item.id}
               categorie={`${item.name}`}
               id={item.id}
               img={CategorieImg}

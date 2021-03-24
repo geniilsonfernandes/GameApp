@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import useCover from "../../../hooks/useCover";
+import React, {useState ,useEffect} from "react";
 
 // css
 import styles from "./Coversingle.module.css";
@@ -14,15 +13,51 @@ import MoreSvg from "../../../svg/cover/MoreSvg";
 import FavoriteSvg from "../../../svg/nav/FavoriteSvg";
 import Skeleton from "../../utilities/skeleton/Skeleton";
 
+
+
+
+
+
+
+
+//api
+const apiKey = "?key=2f93b9a7bffb481a9ab214dcdb9530f0";
+const fetchBasic = async (id) => {
+  const response = await fetch(`https://api.rawg.io/api/games/${id}${apiKey}`);
+  const dados = await response.json();
+  return dados;
+};
+
+//418467
 const Coversingle = () => {
-  const { getGame, load, game } = useCover();
+  
+
+  const [game, setGame] = useState({});
+  const [carregando, setCarregando] = useState(true);
+  
+  
+  useEffect(() => {
+    const loadDate = async () => {
+      //get dados
+      let r = await fetchBasic(418467);
+      //
+      setGame(r);
+      console.log(r);
+      //
+    };
+    loadDate();
+  }, []);
 
   useEffect(() => {
-    const init = () => {
-      getGame(418467);
-    };
-    init();
-  }, []);
+    if (game!=={}) {
+      setCarregando(true)
+      console.log('tem dados');
+    }else{
+      console.log('n tem dados');
+    }
+  }, [game])
+
+
 
   return (
     <div className={global.mwfix}>
@@ -34,11 +69,13 @@ const Coversingle = () => {
       </div>
       <div className={styles.cover__photo}>
         <div className={styles.game__info}>
-          <div className={styles.info__name}>
-            <h1>{load ? <Skeleton width={330} height={36} /> : game.name}</h1>
+          <div className={styles.info__name}>{
+            carregando
+          }
+            <h1>{true ? <Skeleton width={330} height={36} /> : game.name}</h1>
           </div>
           <div className={styles.info__publisher}>
-            {load ? (
+            {true ? (
               <Skeleton width={130} height={24} />
             ) : (
               <p>{game.publishers[0].name}</p>
@@ -51,7 +88,7 @@ const Coversingle = () => {
           </div>
           <div className={styles.divisor}> </div>
           <div className={styles.description}>
-          {load ? (
+          {true ? (
               <Skeleton width={130} height={24} />
             ) : (
               <p>{game.description_raw.substring(0, 150) + "..."}</p>
