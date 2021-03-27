@@ -2,6 +2,11 @@
     text-decoration: none ;
 
 }
+.info__name a:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-underline-offset: 3px;
+}
 .info__name a h1 {
     font-weight: 600;
     font-size: 26px;

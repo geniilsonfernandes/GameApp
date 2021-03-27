@@ -1,34 +1,71 @@
 .cardgame {
     background: #202528;
-    border-radius: 8px;
+
     max-width: 380px;
-    cursor: pointer;
+
     position: relative;
     overflow: hidden;
 }
+
 .cardImage {
-    margin: 4px 4px 0 4px;
-    border-radius: 8px;
-    height: 174px;
+    height: 150px;
     max-width: 100%;
     position: relative;
     overflow: hidden;
     background: #202528;
+
+    position: relative;
 }
-.card__background {
+
+.favoriteBtn{
     position: absolute;
-    top: 0;
-    z-index: 1;
-    object-fit: cover;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    z-index: 99;
+    top: -70px;
+    right: 0;
+    margin: 16px;
+    z-index: 100;
 }
+.ratingCard{
+    background: #772CE8;
+    color: #F5F5F5;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    padding: 2px 0;
+
+    position: absolute;
+    top: -40px;
+    z-index: 999;
+}
+
+.card__background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
 
 .info {
     margin-top: 8px;
     padding: 0 8px;
+    position: relative;
+ 
 }
+
+.info::after{
+    content: '';
+    background: linear-gradient(0deg, #202528 11.88%, rgba(32, 37, 40, 0.55) 58.36%, rgba(32, 37, 40, 0) 96.87%);
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 99;
+}
+
 .info h2 {
     font-weight: 400;
     font-size: 16px;
@@ -56,67 +93,37 @@
 }
 
 .info__buttons {
-    width: 100%;
     margin-top: 12px;
     margin-bottom: 8px;
     display: flex;
     align-items: center;
     flex-flow: wrap;
-    justify-content: space-between;
-
-    padding: 0 8px 8px 8px;
+    justify-content: center;
 }
 
-.button__more,
-.button__favorite {
-    cursor: pointer;
-    min-width: 120px;
-    max-width: 49%;
-    flex: 1 0 auto;
-    height: 38px;
-    padding: 0 8px;
-    border: none;
-    outline: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
+.info__buttons a{
+    text-decoration: none;
+    color: #F5F5F5;
     font-weight: 400;
     font-size: 14px;
-    font-family: Poppins, Arial, Helvetica, sans-serif;
-    color: #f2f2f2;
-    text-decoration: none;
-}
-.button__more p,
-.button__favorite p {
-    margin-right: 8px;
-}
-
-.button__more {
-    background: #591beb;
-}
-.button__favorite {
-    background: transparent;
-    border: 1px solid #ffffff;
+    width: 50%;
+    padding: 12px 0;
+   
+    transition: 200ms ease-in-out all;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.Action4 {
-    position: absolute;
-    background: #0040e5;
-    width: 100%;
-    height: 5px;
-    bottom: 0;
+
+.info__buttons a:hover {
+    width: 60%;
+    background: #1d2225;
 }
+
 @media screen and (max-width: 1442px) {
     
-    .card__background {
-        width: auto;
-        height: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        object-fit: contain;
-        object-position: bottom;
-    }
+    
 }
 
 @media screen and (max-width: 1180px) {
@@ -127,14 +134,7 @@
         flex: 1 0 auto;
         margin-top: 8px;
     }
-    .card__background {
-        width: auto;
-        height: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        object-fit: contain;
-        object-position: bottom;
-    }
+ 
 }
 
 @media screen and (max-width: 746px) {
@@ -154,15 +154,5 @@
         margin-top: 8px;
     }
 
-    .cardImage {
-        height: 274px;
-    }
-    .card__background {
-        width: auto;
-        height: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        object-fit: contain;
-        object-position: bottom;
-    }
+    
 }

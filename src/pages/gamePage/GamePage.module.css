@@ -1,0 +1,154 @@
+header {
+    height: 480px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 300px;
+}
+header::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(
+        360deg,
+        #1a1e21 7.09%,
+        rgba(27, 31, 34, 0.97) 16.85%,
+        rgba(29, 33, 36, 0.76) 35.57%,
+        rgba(32, 37, 40, 0) 59.09%,
+        rgba(26, 30, 33, 0.81) 96.42%
+    );
+    z-index: -1;
+}
+.gamePhoto {
+    position: absolute;
+    width: 100%;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
+}
+
+.headerContainer {
+    margin-top: -200px;
+    padding: 0 8px 80px 8px;
+    display: flex;
+
+    z-index: 1;
+}
+.rightContent {
+    flex: 0 0 50%;
+
+}
+.leftContent {
+    flex: 0 0 50%;
+    position: relative;
+}
+
+/*  ------ */
+
+/*  ------ */
+.btnFavorite {
+    position: absolute;
+    left: 0;
+    top: -100px;
+}
+
+.gameRating {
+    background: #772ce8;
+    color: #f5f5f5;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    padding: 2px 0;
+    margin-bottom: 8px;
+
+    position: absolute;
+    left: 0;
+    top: -40px;
+}
+.gameInfo h2 {
+    font-weight: 600;
+    font-size: 26px;
+
+    color: #f5f5f5;
+}
+.description {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description p {
+    align-self: flex-start;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    color: #f5f5f5;
+}
+.Read {
+    margin-top: 16px;
+    background: #f5f5f5;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 8px 0;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #202528;
+}
+
+.gameContent {
+    display: flex;
+}
+
+
+
+@media screen and (max-width: 1440px){
+	
+}
+@media screen and (max-width: 1088px){
+    
+}
+@media screen and (max-width: 746px) {
+
+    header {
+        height: 480px;
+        overflow: hidden;
+        position: relative;
+        padding-top: 150px;
+    }
+    .gamePhoto {
+        position: absolute;
+        width: auto;
+        height: 100%;
+        top: -15%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -2;
+    }
+
+
+    .description {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+
+	.headerContainer {
+        flex-flow: wrap;
+    }
+    .rightContent {
+        flex: 0 0 100%;
+    
+    }
+    .leftContent {
+        flex: 0 0 100%;
+        position: relative;
+    }
+}

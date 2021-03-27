@@ -5,23 +5,28 @@ import card from "./CardGame.module.css";
 import WinSvg from "../../../svg/cover/WinSvg";
 import PsSvg from "../../../svg/cover/PsSvg";
 import XboxSvg from "../../../svg/cover/XboxSvg";
-
-import MoreSvg from "../../../svg/cover/MoreSvg";
-import FavoriteSvg from "../../../svg/nav/FavoriteSvg";
+import NextSvg from "../../../svg/cover/NextSvg";
+import BtnFavorite from "../../utilities/buttons/BtnFavorite";
 
 import { Link } from "react-router-dom";
 
 const CardGame = (props) => {
-
-  const {name} = props;
-  const {img} = props;
-
+  const { name } = props;
+  const { img } = props;
+  const {metacritic} = props
+  const {id} = props  
   return (
     <div className={card.cardgame}>
       <div className={card.cardImage}>
         <img className={card.card__background} src={img} alt={name} />
       </div>
       <div className={card.info}>
+        <div className={card.ratingCard}>
+            {metacritic== null ? '?': metacritic}
+        </div>
+        <div className={card.favoriteBtn}>
+          <BtnFavorite />
+        </div>
         <h2>{name}</h2>
         <div className={card.descrip}>
           <div className={card.platforms}>
@@ -35,17 +40,11 @@ const CardGame = (props) => {
         </div>
       </div>
       <div className={card.info__buttons}>
-        <Link to="categorie/3424234" className={card.button__more}>
-          <p>View more</p>
-          <MoreSvg />{" "}
-        </Link>
-
-        <Link to="categorie/342rewrw" className={card.button__favorite}>
-          <p>Add favorite</p>
-          <FavoriteSvg />{" "}
+        <Link to={`/game/${id}`} >
+          {" "}
+          Game Page <NextSvg />{" "}
         </Link>
       </div>
-      <div className={card.Action4}></div>
     </div>
   );
 };

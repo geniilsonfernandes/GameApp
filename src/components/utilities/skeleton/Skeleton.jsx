@@ -10,7 +10,6 @@ export const Skeleton = (props) => {
   const style = {
     width: `${width}${mw}`,
     height: `${height}${mh}`,
-    borderRadius: "4px",
     marginLeft: `${ml}px`,
     marginRight: `${mr}px`,
   };
