@@ -23,7 +23,7 @@ header::after {
 .gamePhoto {
     position: absolute;
     width: 100%;
-    top: -15%;
+    top: -5%;
     left: 50%;
     transform: translateX(-50%);
     z-index: -2;
@@ -38,11 +38,12 @@ header::after {
 }
 .rightContent {
     flex: 0 0 50%;
-
+    z-index: 99;
 }
 .leftContent {
     flex: 0 0 50%;
     position: relative;
+    z-index: 99;
 }
 
 /*  ------ */
